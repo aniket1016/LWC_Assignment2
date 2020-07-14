@@ -1,0 +1,56 @@
+<template>
+    <lightning-card title="Account Details">
+        <lightning-icon slot="media" icon-name="standard:groups"></lightning-icon>
+        <template if:true={isEdit1}>
+            
+           
+            <div class="slds-align_absolute-center">
+                    <lightning-layout-item >
+                                    <p>Account Name:{accountName}  </p>                     
+                                    <br/>
+                                    <p>Account Email:{accountEmail}  </p>  
+                                    <br/>
+                                    <p>Account Phone:{accountPhone}  </p>       
+                                    <br/>
+                                    <p>Account Website:{accountWebsite}  </p>                     
+                                    <br/>
+                                    <p>Account Industry:{accountIndustry}  </p>       
+                                    <br/>
+                    </lightning-layout-item>
+            </div>	
+            
+            <div class="slds-align_absolute-center">
+            </br>
+            <lightning-button label="Edit" onclick={displayDetails}></lightning-button>
+            
+            </div>
+        </template>
+
+</lightning-card>
+<template if:true={isEdit}>
+    <lightning-card title="Update Account Details ..">
+        <lightning-layout>
+            <div class="slds-align_absolute-center">
+            <lightning-layout-item>
+                <lightning-input label="Account Name" value={accountName} onchange={handleChanges} class="slds-m-bottom_x-small"></lightning-input>                        
+                <br/>
+                <lightning-input label="Account Email" value={accountEmail} onchange={handleChanges} class="slds-m-bottom_x-small"></lightning-input>  
+                <br/>
+                <lightning-input label="Account Phone" value={accountPhone} onchange={handleChanges} class="slds-m-bottom_x-small"></lightning-input>
+                <br/>
+                <lightning-input label="Account Industry" value={accountIndustry} onchange={handleChanges} class="slds-m-bottom_x-small"></lightning-input>                        
+                <br/>
+                <lightning-input label="Account Website" value={accountWebsite} onchange={handleChanges} class="slds-m-bottom_x-small"></lightning-input>
+                <br/>
+                                    
+                <div class="slds-col">
+                    <lightning-button label= "Save" onclick={updateAccountRecord}>  </lightning-button>
+                    <lightning-button label= "Cancel" onclick={cancelAccountRecord}> </lightning-button >
+                </div>
+                
+            </lightning-layout-item>
+        </div>
+        </lightning-layout>
+    </lightning-card>
+</template>
+</template>

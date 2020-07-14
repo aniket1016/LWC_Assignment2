@@ -1,0 +1,24 @@
+<template>
+       <template if:true={picklistValues.data}>
+        
+        <!--Display Picklist values of Type field using Combo-box along with search buton-->
+
+         <div class="slds-grid slds-wrap bgcolor">
+            <div class="slds size_1-of-2">
+            <lightning-combobox name="progress"
+                                label="Search Account"
+                                value={value}
+                                placeholder="-Select-"
+                                options={picklistValues.data.values}
+                                onchange={handleChange} >
+            </lightning-combobox>
+        </div>    
+                
+        <div class="slds size_1-of-2 slds slds-p-top_large slds-p-left_x-small slds-p-bottom_medium" >
+                <lightning-button  variant="brand" onclick={handleSearch} label="Search"></lightning-button>
+        </div> 
+    </div>
+
+        </template></br>
+        
+</template>
